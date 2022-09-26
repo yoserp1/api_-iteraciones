@@ -14,9 +14,11 @@ Se debe exponer un API que reciba un numero de iteraciones Q y un número del 1 
 Modificar los parametros de conexion en:
 * api_iteraciones/src/main/resources/application.properties
 * Ejemplo del archivo:
-* spring.datasource.url=jdbc:mysql://localhost:3306/bartender
-* spring.datasource.username=mi_usuario
-* spring.datasource.password=mi_password
-* spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-* spring.jpa.database-platform = org.hibernate.dialect.MySQL5Dialect
-* spring.jpa.generate-ddl=true
+```shell
+spring.datasource.url=jdbc:mysql://localhost:3306/bartender
+spring.datasource.username=mi_usuario
+spring.datasource.password=mi_password
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform = org.hibernate.dialect.MySQL5Dialect
+spring.jpa.generate-ddl=true
+```
