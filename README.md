@@ -23,3 +23,7 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.jpa.database-platform = org.hibernate.dialect.MySQL5Dialect
 spring.jpa.generate-ddl=true
 ```
+## Como probar
+
+* Utilizar un cliente para peticiones HTTP ejemplo: Postman
+* En la siguiente url hacer la peticion: ```[shell](http://localhost:8080/bar?pila=1&iteraccion=3)```
