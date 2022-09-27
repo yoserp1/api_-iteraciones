@@ -32,7 +32,7 @@ public class ArraysService {
 	    String[] vasos = num.split(",");
 	    int talla = vasos.length;
 	    int divisor = 2;
-	    int[] arregloA = new int[iteraccion];
+	    List<Integer> arregloA = new ArrayList<>();
 	    List<Integer> respuesta = new ArrayList<>();
 	    List<Integer> primo = new ArrayList<>();
 
@@ -46,15 +46,18 @@ public class ArraysService {
 			}
 	    }
 	    
-	    for (int i = 0; i < iteraccion; i++) {
-	    	int last = primo.get(primo.size() - 1);
-	    	arregloA[i] = last;
+	    for (int i = 1; i <= primo.size(); i++) {
+	    	int last = primo.get(primo.size() - i);
+	    	arregloA.add(last);
 	    }
+	    
+	    Collections.sort(arregloA);
+	    String resultadoB = arregloA.stream().map(Object::toString).collect(Collectors.joining(","));
 	    
 	    Collections.sort(respuesta, Collections.reverseOrder());
 	    
 	    String resultado = respuesta.stream().map(Object::toString).collect(Collectors.joining(","));
-	    return new ArraysDTO(resultado);
+	    return new ArraysDTO(resultado +","+resultadoB);
 
 	}
 
