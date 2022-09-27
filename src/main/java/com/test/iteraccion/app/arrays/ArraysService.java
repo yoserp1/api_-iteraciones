@@ -47,8 +47,8 @@ public class ArraysService {
 	    }
 	    
 	    for (int i = 1; i <= primo.size(); i++) {
-	    	int last = primo.get(primo.size() - i);
-	    	arregloA.add(last);
+	    	int ultimo = primo.get(primo.size() - i);
+	    	arregloA.add(ultimo);
 	    }
 	    
 	    Collections.sort(arregloA);
