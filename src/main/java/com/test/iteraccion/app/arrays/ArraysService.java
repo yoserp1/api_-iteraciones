@@ -52,12 +52,12 @@ public class ArraysService {
 	    }
 	    
 	    Collections.sort(arregloA);
-	    String resultadoB = arregloA.stream().map(Object::toString).collect(Collectors.joining(","));
-	    
 	    Collections.sort(respuesta, Collections.reverseOrder());
+	    respuesta.addAll(arregloA);   
 	    
 	    String resultado = respuesta.stream().map(Object::toString).collect(Collectors.joining(","));
-	    return new ArraysDTO(resultado +","+resultadoB);
+	    
+	    return new ArraysDTO(resultado);
 
 	}
 
