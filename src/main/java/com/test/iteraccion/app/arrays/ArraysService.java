@@ -1,6 +1,10 @@
 package com.test.iteraccion.app.arrays;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,24 +29,33 @@ public class ArraysService {
 	
 	public ArraysDTO respuesta(ArraysDTO arraysDTO, Integer iteraccion) {
 	    String num = arraysDTO.getOutput(); 
-	    String[] respuesta = num.split(",");
-	    int talla = respuesta.length;
-	    int divisor = 2;   
-	    int[] arregloA = {};
-	    int[] arregloB = {};
-	    for (int i = 0; i < iteraccion; i++) {
-		    for (int j = 0; j < talla; j++) {
-		    	int valor = Integer.parseInt(respuesta[j]);
-				if (valor % divisor == 0) {
-					System.out.println(valor + " es divisible entre 2 ");
-				}
-				if (valor % divisor != 0) {
-					System.out.println(valor + " NO es divisible entre 2 ");
-				}
-		    	
-		    }
+	    String[] vasos = num.split(",");
+	    int talla = vasos.length;
+	    int divisor = 2;
+	    int[] arregloA = new int[iteraccion];
+	    List<Integer> respuesta = new ArrayList<>();
+	    List<Integer> primo = new ArrayList<>();
+
+	    for (int j = 0; j < talla; j++) {
+	    	int valor = Integer.parseInt(vasos[j]);
+			if (valor % divisor == 0) {
+				respuesta.add(valor);
+			}
+			if (valor % divisor != 0) {
+				primo.add(valor);
+			}
 	    }
-		return arraysDTO;
+	    
+	    for (int i = 0; i < iteraccion; i++) {
+	    	int last = primo.get(primo.size() - 1);
+	    	arregloA[i] = last;
+	    }
+	    
+	    Collections.sort(respuesta, Collections.reverseOrder());
+	    
+	    String resultado = respuesta.stream().map(Object::toString).collect(Collectors.joining(","));
+	    return new ArraysDTO(resultado);
+
 	}
 
 }
