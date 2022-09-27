@@ -27,4 +27,4 @@ spring.jpa.generate-ddl=true
 
 * Utilizar un cliente para peticiones HTTP ejemplo: Postman
 * En la siguiente url hacer la peticion: ```http://localhost:8080/bar?pila=1&iteraccion=3```
-* Donde pila es il id del registro en la tabla arrays y iteraccion es la cantidad de iteraciones que realizara el programa.
+* Donde pila es el id del registro en la tabla arrays y iteraccion es la cantidad de iteraciones que realizara el programa.
